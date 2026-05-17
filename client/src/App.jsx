@@ -8,7 +8,7 @@ export default function App(){
   const [view, setView] = useState('notes')
 
   useEffect(()=>{
-    fetch('http://localhost:3000/auth/me', { credentials: 'include' })
+    fetch('https://peblo-assginmentbackend.onrender.com/auth/me', { credentials: 'include' })
       .then(r => r.json())
       .then(data => { if(data.user) setUser(data.user) })
       .catch(()=>{})
