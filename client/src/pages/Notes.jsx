@@ -385,7 +385,7 @@ export default function Notes({ user, onLogout }) {
   }, [query, tagFilter, sort]);
 
   const createNew = async () => {
-    const res = await fetch("http://localhost:3000/api/notes", {
+    const res = await fetch("https://peblo-assginmentbackend.onrender.com/api/notes", {
       credentials: "include",
       method: "POST",
       headers: { "Content-Type": "application/json" },
