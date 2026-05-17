@@ -134,7 +134,7 @@ function Editor({ note, onChange, onArchive, onShare }) {
       setAiLoading(true);
 
       const res = await fetch(
-        `http://localhost:3000/api/notes/${note._id}/ai`,
+        `https://peblo-assginmentbackend.onrender.com/api/notes/${note._id}/ai`,
         {
           method: "POST",
           credentials: "include",
@@ -367,7 +367,7 @@ export default function Notes({ user, onLogout }) {
     if (sort) params.set("sort", sort);
 
     const res = await fetch(
-      `http://localhost:3000/api/notes?${params.toString()}`,
+      `https://peblo-assginmentbackend.onrender.com/api/notes?${params.toString()}`,
       { credentials: "include" }
     );
 
@@ -401,7 +401,7 @@ export default function Notes({ user, onLogout }) {
   const updateNote = async (note) => {
     if (!note._id) return;
 
-    await fetch(`http://localhost:3000/api/notes/${note._id}`, {
+    await fetch(`https://peblo-assginmentbackend.onrender.com/api/notes/${note._id}`, {
       credentials: "include",
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
@@ -415,7 +415,7 @@ export default function Notes({ user, onLogout }) {
 
   const archive = async (note) => {
     await fetch(
-      `http://localhost:3000/api/notes/${note._id}/archive`,
+      `https://peblo-assginmentbackend.onrender.com/api/notes/${note._id}/archive`,
       {
         credentials: "include",
         method: "POST",
@@ -433,7 +433,7 @@ export default function Notes({ user, onLogout }) {
 
   const share = async (note) => {
     const res = await fetch(
-      `http://localhost:3000/api/notes/${note._id}/share`,
+      `https://peblo-assginmentbackend.onrender.com/api/notes/${note._id}/share`,
       {
         credentials: "include",
         method: "POST",
@@ -448,7 +448,7 @@ export default function Notes({ user, onLogout }) {
   };
 
   const logout = async () => {
-    await fetch("http://localhost:3000/auth/logout", {
+    await fetch("https://peblo-assginmentbackend.onrender.com/auth/logout", {
       credentials: "include",
       method: "POST",
     });
@@ -463,7 +463,7 @@ export default function Notes({ user, onLogout }) {
   if (!confirmDelete) return;
 
   await fetch(
-    `http://localhost:3000/api/notes/${note._id}`,
+    `https://peblo-assginmentbackend.onrender.com/api/notes/${note._id}`,
     {
       credentials: "include",
       method: "DELETE",
@@ -481,7 +481,7 @@ export default function Notes({ user, onLogout }) {
 
 const showInsights = async () => {
   const res = await fetch(
-    "http://localhost:3000/api/notes/insights",
+    "https://peblo-assginmentbackend.onrender.com/api/notes/insights",
     {
       credentials: "include",
     }
