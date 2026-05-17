@@ -22,8 +22,8 @@ export default function Auth({ onAuth }) {
 
     try {
       const url = isSignup
-        ? "http://localhost:3000/auth/signup"
-        : "http://localhost:3000/auth/login";
+        ? "https://peblo-assginmentbackend.onrender.com/auth/signup"
+        : "https://peblo-assginmentbackend.onrender.com/auth/login";
 
       const body = isSignup
         ? { name, email, password }
