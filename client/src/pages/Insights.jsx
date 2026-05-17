@@ -5,7 +5,7 @@ export default function Insights() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/notes/insights", {
+    fetch("https://peblo-assginmentbackend.onrender.com/api/notes/insights", {
       credentials: "include",
     })
       .then((r) => r.json())
