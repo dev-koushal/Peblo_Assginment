@@ -6,7 +6,7 @@ export default function Public(){
   const id = parts[parts.length-1]
 
   useEffect(()=>{
-    fetch(`http://localhost:3000/public/${id}`)
+    fetch(`https://peblo-assginmentbackend.onrender.com/public/${id}`)
       .then(r=>r.json())
       .then(d=> setNote(d.note))
       .catch(()=>{})
